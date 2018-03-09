@@ -1,0 +1,61 @@
+#Nykyisen yhteyden tiedot
+\conninfo
+
+#käyttäjäluettelo
+\du
+
+#Vaihda käyttäjäksi postgress
+sudo -u postgres psql postgres
+
+#Vaihda salasana
+\password postgres
+
+#Sulje postgresql
+/q
+
+#Luo uusi käyttäjä
+sudo adduser <new name>
+
+#Kirjaudu uutena käyttäjänä
+sudo -u <new name> psql
+
+#Anna kirjautuneelle käyttäjälle oikeudet toiseen tietokantaan
+psql -d <tietokanta>
+
+#aseta salasana
+\password postgres
+
+#Sulje postgresql
+/q
+
+#postgres prompt
+sudo -u postgres psql
+
+#Salli paikalliset yhteydet
+# Avaa pääkäyttäjänä
+/etc/postgresql/9.6/main/pg_hba.conf
+#Muuta Rivi
+local   all             all              peer
+#Täksi
+local   all             all              md5
+#To allow connections using pgAdmin,
+#find the line that describes local loopback connections over IPv6:
+host    all        all          ::1/128            ident
+#Tallennus
+ctrl + x
+
+#Käynnistä uudelleen
+sudo service postgresql restart
+
+#Testaa yhteys
+psql -U postgres -W
+
+#Kirjaudu järjestelmäkäyttäjänä
+sudo -u postgres -i
+#tai
+sudo -i -u postgres
+#Poistu
+exit
+
+#Näytä taulun sisältö
+SELECT * FROM <taulu>;

@@ -1,0 +1,25 @@
+cd /
+pip3 install virtualenv
+pip3 install --upgrade pip
+cd Desktop/
+virtualenv myvenv
+source myvenv/bin/activate
+django-admin startproject portfolio
+cd portfolio
+pip install django==2.0.2
+python manage.py
+git init
+git status
+git add -A
+git commit -m "Our first"
+python manage.py runserver
+git status
+python manage.py startapp blog
+python manage.py startapp jobs
+git add -A
+git commit -m "Add jobs and blog apps"
+python manage.py migrate
+python manage.py makemigrations
+pip install Pillow==5.0.0
+python manage.py runserver
+python manage.py createsuperuser
