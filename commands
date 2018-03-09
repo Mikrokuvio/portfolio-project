@@ -25,11 +25,37 @@ python manage.py runserver
 python manage.py createsuperuser
 
 #Lähtä tavarat githubiin / ei toimi olemassaolevalla
-git remote add origin https://github.com/Mikrokuvio/wordcount-project.git
+git remote add origin https://github.com/Mikrokuvio/portfolio-project.git
 git push -u origin master
 
 #Käynnistä virtualisointi
 source myvenv/bin/activate
 
+#Koosta paikallinen haara
 git add -A
-git commit -m "Add jobs and blog apps"
+git commit -m "<Kuvaus>"
+
+#Siirrä repository githubiin / ensimmäinen kerta
+git remote add origin https://github.com/Mikrokuvio/portfolio-project.git
+git push -u origin master
+
+#Päivitä repository githubiin
+git status
+git add -A
+git commit -m "<Kuvaus>"
+git add -A
+#git remote add origin https://github.com/Mikrokuvio/portfolio-project.git
+git push -u origin master
+
+#Lataa koneelle tai serverille
+git clone https://github.com/Mikrokuvio/portfolio-project.git
+
+
+
+
+#Jos ongelmia lähetyksen kanssa
+#To remove a remote repository you enter:
+git remote rm origin
+
+#Again "origin" is the name of the remote repository if you want to remove the "upstream" remote:
+git remote rm upstream
