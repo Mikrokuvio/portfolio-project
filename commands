@@ -3,7 +3,7 @@ pip3 install virtualenv
 pip3 install --upgrade pip
 cd Desktop/
 virtualenv myvenv
-source myvenv/bin/activate
+source myvenv/bin/activate #Käynnistä virtualisointi
 django-admin startproject portfolio
 cd portfolio
 pip install django==2.0.2
@@ -23,3 +23,13 @@ python manage.py makemigrations
 pip install Pillow==5.0.0
 python manage.py runserver
 python manage.py createsuperuser
+
+#Lähtä tavarat githubiin / ei toimi olemassaolevalla
+git remote add origin https://github.com/Mikrokuvio/wordcount-project.git
+git push -u origin master
+
+#Käynnistä virtualisointi
+source myvenv/bin/activate
+
+git add -A
+git commit -m "Add jobs and blog apps"
